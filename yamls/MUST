@@ -1,0 +1,34 @@
+
+1) buildbot.util.kubeclientservice.KubeError: pods "buildbot-kubernetes4-c4fb24" is forbidden: User "system:serviceaccount:test:default" cannot delete resource "pods" in API group "" in the namespace "test"
+
+kubectl create clusterrolebinding service-account-admin --clusterrole=cluster-admin --serviceaccount test:default
+
+
+https://blog.csdn.net/xiaomin1991222/article/details/84860146
+
+
+
+
+
+kubectl create clusterrolebinding service-account-admin1 --clusterrole=cluster-admin --serviceaccount test:service-account-1
+
+
+1)
+2019-12-23 02:12:20+0000 [-] <twisted.internet.tcp.Connector instance at 0x7f4313756998> will retry in 2 seconds
+2019-12-23 02:12:20+0000 [-] Stopping factory <buildbot_worker.pb.BotFactory instance at 0x7f43137565a8>
+2019-12-23 02:12:22+0000 [-] Starting factory <buildbot_worker.pb.BotFactory instance at 0x7f43137565a8>
+2019-12-23 02:12:22+0000 [-] Connecting to buildbot-854cf9b957-dcf82:9989
+2019-12-23 02:12:22+0000 [-] Connection to buildbot-854cf9b957-dcf82:9989 failed: [Failure instance: Traceback (failure with no frames): <class 'twisted.internet.error.DNSLookupError'>: DNS lookup failed: buildbot-854cf9b957-dcf82.
+
+  
+masterFQDN=worker.KubeLatentWorker.get_ip
+
+2) 
+2019-12-23 05:12:20+0000 [HangCheckProtocol,client] ReconnectingPBClientFactory.failedToGetPerspective
+2019-12-23 05:12:20+0000 [HangCheckProtocol,client] unauthorized login; check worker name and password
+2019-12-23 05:12:20+0000 [HangCheckProtocol,client] Lost connection to 10.244.6.246:9989
+
+remove 
+111         _d={
+112             #'WORKERPASS':'pass',
+

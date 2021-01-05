@@ -1,0 +1,37 @@
+# Copyright (C) 2013 - 2019 Wind River Systems, Inc.
+# File  : db.yaml
+# Author: Lei Yang <Lei.Yang@windriver.com>
+# Date  : 18.12.2019
+#apiVersion: extensions/v1beta1
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: postgres
+  labels:
+    app: buildbot
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: buildbot
+        tier: postgres
+    spec:
+      containers:
+      - name: db
+        image: postgres:9.4
+        env:
+        - name: POSTGRES_PASSWORD
+          value: change_me
+        - name: POSTGRES_USER
+          value: buildbot
+        - name: POSTGRES_DB
+          value: buildbot
+        - name: POSTGRES_DB_HOST
+          value: postgres
+        - name: BUILDBOT_DB_URL
+          value: 'postgresql+psycopg2://{POSTGRES_USER}:{POSTGRES_PASSWORD}@db/{POSTGRES_DB}'
+        ports:
+        - containerPort: 5432
+          name: postgres
