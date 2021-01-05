@@ -53,7 +53,7 @@ spec:
           value: config
         - name: BUILDBOT_CONFIG_URL
           #value: 'https://github.com/leiyang/meta-buildbot-configs/archive/master.tar.gz'
-          value: 'https://github.com/leiyang/buildbot-2021/archive/new.tar.gz'
+          value: 'https://github.com/leiyang/buildbot-2021/archive/latest.tar.gz'
         - name: BUILDBOT_WORKER_PORT
           value: '9989'
         - name: BUILDBOT_WEB_URL
