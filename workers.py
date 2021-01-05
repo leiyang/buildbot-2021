@@ -188,7 +188,7 @@ class MyKubeWorker(MyWorkerBase, worker.KubeLatentWorker):
 workers = [
     # add 21 kube workers
     MyKubeWorker(
-        'kubernetes' + str(i),
+        'dynamic_worker' + str(i),
         max_builds=1,
         build_wait_timeout=0,
         run_single=False,
